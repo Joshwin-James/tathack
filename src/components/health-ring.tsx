@@ -51,8 +51,8 @@ export function HealthRing({
         />
         <defs>
           <linearGradient id="ring-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="var(--electric)" />
-            <stop offset="100%" stopColor="oklch(0.7 0.2 200)" />
+            <stop offset="0%" stopColor="var(--primary)" />
+            <stop offset="100%" stopColor="var(--success)" />
           </linearGradient>
         </defs>
       </svg>

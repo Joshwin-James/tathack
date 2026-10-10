@@ -53,13 +53,13 @@ export function MetricTile({
 
 export function SeverityChip({ severity }: { severity: "critical" | "warning" | "info" | "resolved" }) {
   const map = {
-    critical: "bg-destructive/10 text-destructive",
-    warning: "bg-warn/10 text-warn",
-    info: "bg-accent text-accent-foreground",
-    resolved: "bg-success/10 text-success",
+    critical: "bg-destructive/10 text-destructive border border-destructive/20",
+    warning: "bg-warn/20 text-warn-ink border border-warn/30",
+    info: "bg-transit/12 text-transit border border-transit/25",
+    resolved: "bg-success/12 text-success border border-success/20",
   };
   return (
-    <span className={cn("inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider", map[severity])}>
+    <span className={cn("inline-flex items-center rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider", map[severity])}>
       {severity}
     </span>
   );

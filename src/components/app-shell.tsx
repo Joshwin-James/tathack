@@ -124,7 +124,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       {/* Desktop sidebar */}
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[248px] flex-col border-r border-border bg-card lg:flex">
         <div className="flex h-16 items-center gap-3 border-b border-border px-6">
-          <div className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground shadow-sm">
+          <div className="grid size-9 place-items-center rounded-xl bg-navy text-navy-foreground shadow-sm">
             <span className="font-display text-sm font-bold">C</span>
           </div>
           <div className="min-w-0">
@@ -251,7 +251,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="absolute inset-0 bg-ink/40" onClick={() => setMobileOpen(false)} />
           <div className="absolute inset-y-0 left-0 w-[280px] overflow-y-auto bg-card p-6 shadow-2xl animate-rise">
             <div className="mb-6 flex items-center gap-3">
-              <div className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground">
+              <div className="grid size-9 place-items-center rounded-xl bg-navy text-navy-foreground shadow-sm">
                 <span className="font-display text-sm font-bold">C</span>
               </div>
               <p className="font-display font-semibold">CityTwin AI</p>
@@ -394,7 +394,7 @@ function MobileBottomNav({ active }: { active: { stage: string; path: string } }
   ];
   return (
     <nav className="fixed inset-x-2 bottom-2 z-50 lg:hidden">
-      <div className="bg-card/98 border border-border/80 flex items-center justify-around rounded-2xl px-2 py-2 shadow-2xl backdrop-blur-2xl">
+      <div className="bg-navy/95 border border-white/10 flex items-center justify-around rounded-2xl px-2 py-2 shadow-2xl backdrop-blur-2xl">
         {items.map((item) => {
           const isActive = active.stage === item.key;
           return (
@@ -403,7 +403,7 @@ function MobileBottomNav({ active }: { active: { stage: string; path: string } }
               to={item.to}
               className={cn(
                 "flex flex-1 flex-col items-center gap-0.5 rounded-2xl px-2 py-1.5 transition-colors",
-                isActive ? "text-primary" : "text-muted-foreground",
+                isActive ? "text-primary-soft font-bold" : "text-navy-foreground/60 hover:text-navy-foreground",
               )}
             >
               <item.Icon className="size-4" />

@@ -25,6 +25,7 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -42,10 +43,18 @@
   --color-ink: var(--ink);
   --color-electric: var(--electric);
   --color-electric-soft: var(--electric-soft);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
   --color-warn: var(--warn);
+  --color-warn-ink: var(--warn-ink);
   --color-danger: var(--danger);
   --color-success: var(--success);
   --color-info: var(--info);
+  --color-transit: var(--transit);
+
+  --color-map-water: var(--map-water);
+  --color-map-land: var(--map-land);
+  --color-map-road: var(--map-road);
 
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -67,71 +76,76 @@
   --radius: 0.75rem;
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     PROJECT SENTINEL — SLEEK PURPLE / VIOLET THEME
-     Deep royal purple accents · Clean crisp cards · Modern cyber-tactical violet
+     PROJECT SENTINEL — CORE BRAND & EDITORIAL CANVAS
+     Warm Editorial Cream · Cobalt Blue · Midnight Navy
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-  /* Core purple tokens */
-  --porcelain: #faf8ff;           /* Subtle soft violet/white canvas */
-  --ink: #0f0a1c;                 /* Deep midnight violet for dark text */
+  /* 1. Core Brand & Editorial Canvas */
+  --background: oklch(0.966 0.008 90);           /* #f6f4ee Warm Editorial Cream */
+  --foreground: oklch(0.205 0 0);                 /* #171717 Deep Charcoal */
+  --card: oklch(1 0 0);                           /* #ffffff Pure White elevated panels */
+  --card-foreground: oklch(0.205 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0 0);
 
-  /* Primary Accent: Electric Violet / Royal Purple */
-  --electric: #7c3aed;            /* Vibrant Purple (violet-600) */
-  --electric-soft: #f3e8ff;       /* Light purple soft glow / highlight (purple-100) */
+  --primary: oklch(0.47 0.22 265);                /* #1b47d3 Royal / Cobalt Blue */
+  --primary-foreground: #ffffff;
+  --primary-soft: oklch(0.94 0.035 265);          /* #e0ebff Soft Ice / Lavender Blue */
 
-  /* Semantic status colors */
-  --success: oklch(0.60 0.15 152);  /* Emerald Green */
-  --warn:    oklch(0.68 0.16 70);   /* Warm Amber */
-  --danger:  oklch(0.58 0.20 25);   /* Crimson Red */
-  --info:    #8b5cf6;               /* Light Violet */
+  --navy: oklch(0.22 0.09 268);                   /* #091443 Midnight Deep Navy */
+  --navy-foreground: oklch(0.97 0.01 90);         /* #f8f5ee Warm off-white */
 
-  /* Surface system */
-  --background:            #f8f6fc;
-  --foreground:            #120c24;
-  --card:                  #ffffff;
-  --card-foreground:       #120c24;
-  --popover:               #ffffff;
-  --popover-foreground:    #120c24;
+  --border: oklch(0.917 0.007 85);                /* #e6e3de Warm muted grey */
+  --input: oklch(0.917 0.007 85);
+  --ring: oklch(0.47 0.22 265);
 
-  /* Actions & Primary Buttons */
-  --primary:               #7c3aed;
-  --primary-foreground:    #ffffff;
+  --secondary: oklch(0.945 0.008 90);             /* Subtle cream-grey layer */
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.935 0.008 85);
+  --muted-foreground: oklch(0.50 0.01 60);
 
-  /* Secondary surfaces */
-  --secondary:             #f3eefc;
-  --secondary-foreground:  #4c1d95;
-  --muted:                 #ede7f6;
-  --muted-foreground:      #6b5e82;
+  --accent: var(--primary-soft);                  /* Soft lavender blue accent */
+  --accent-foreground: var(--primary);
 
-  /* Accent highlights */
-  --accent:                #ede9fe;
-  --accent-foreground:     #6d28d9;
+  /* Legacy aliases mapped to new tokens */
+  --porcelain: var(--background);
+  --ink: var(--foreground);
+  --electric: var(--primary);
+  --electric-soft: var(--primary-soft);
 
-  /* Destructive */
-  --destructive:           var(--danger);
+  /* 2. Functional & Status Colors */
+  --danger: oklch(0.58 0.18 25);                  /* #cf4040 Coral Red - Critical / Destructive */
+  --destructive: var(--danger);
   --destructive-foreground: #ffffff;
 
-  /* Borders & inputs */
-  --border:   #e5def0;
-  --input:    #e5def0;
-  --ring:     #7c3aed;
+  --warn: oklch(0.76 0.14 72);                    /* #e7a13c Amber Gold */
+  --warn-ink: oklch(0.52 0.12 60);                /* #9a5505 Dark Amber Brown */
 
-  /* Charts — purple gradient palette */
-  --chart-1: #7c3aed;
-  --chart-2: #a855f7;
-  --chart-3: #c084fc;
-  --chart-4: #6366f1;
-  --chart-5: #38bdf8;
+  --success: oklch(0.60 0.11 162);                /* #34946c Emerald Green */
+  --transit: oklch(0.60 0.15 245);                /* #0486d3 Cyan / Sky Blue */
+  --info: var(--transit);
+
+  /* 3. Geographic / Map Palette */
+  --map-water: oklch(0.91 0.03 230);              /* #cee6f2 Soft Backwater Blue */
+  --map-land: oklch(0.985 0.006 90);              /* #fcfaf6 Pale Canvas */
+  --map-road: oklch(0.88 0.01 85);                /* #dad7d0 Muted Sand Grey */
 
   /* Sidebar */
-  --sidebar:                    #ffffff;
-  --sidebar-foreground:         #120c24;
-  --sidebar-primary:            #7c3aed;
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent:             #f3eefc;
-  --sidebar-accent-foreground:  #6d28d9;
-  --sidebar-border:             #e5def0;
-  --sidebar-ring:               #7c3aed;
+  --sidebar-accent: var(--primary-soft);
+  --sidebar-accent-foreground: var(--primary);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--primary);
+
+  /* Charts */
+  --chart-1: var(--primary);                      /* Cobalt Blue */
+  --chart-2: var(--success);                      /* Emerald */
+  --chart-3: var(--warn);                         /* Amber Gold */
+  --chart-4: var(--danger);                       /* Coral Red */
+  --chart-5: var(--transit);                      /* Cyan / Sky Blue */
 }
 
 @layer base {
@@ -175,7 +189,24 @@
 
 @utility electric-shadow {
   box-shadow:
-    0 8px 24px -8px color-mix(in oklab, var(--electric) 35%, transparent);
+    0 8px 24px -8px color-mix(in oklab, var(--primary) 30%, transparent);
+}
+
+@utility navy-panel {
+  background: radial-gradient(
+    120% 120% at 100% 0%, 
+    color-mix(in oklab, var(--primary) 70%, var(--navy)) 0%, 
+    var(--navy) 60%
+  );
+  color: var(--navy-foreground);
+}
+
+@utility dot-grid {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--foreground) 9%, transparent) 1px, 
+    transparent 1px
+  );
+  background-size: 20px 20px;
 }
 
 @keyframes pulse-soft {
