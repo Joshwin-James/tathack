@@ -76,90 +76,91 @@
   --radius: 0.75rem;
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     PROJECT SENTINEL — CORE BRAND & EDITORIAL CANVAS
-     Warm Editorial Cream · Cobalt Blue · Midnight Navy
+     PROJECT SENTINEL — ENTERPRISE COMMAND CENTER (DARK PALETTE)
+     Deep Navy & Charcoal · Restrained Teal/Cyan · Precision Layering
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-  /* 1. Core Brand & Editorial Canvas */
-  --background: oklch(0.966 0.008 90);           /* #f6f4ee Warm Editorial Cream */
-  --foreground: oklch(0.205 0 0);                 /* #171717 Deep Charcoal */
-  --card: oklch(1 0 0);                           /* #ffffff Pure White elevated panels */
-  --card-foreground: oklch(0.205 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.205 0 0);
+  /* 1. Core Surfaces & Typography */
+  --background: oklch(0.14 0.02 260);            /* #0b0f19 Deep Navy / Midnight Base */
+  --foreground: oklch(0.96 0.01 240);            /* #eef2f8 Crisp High-Contrast White */
+  --card: oklch(0.18 0.025 260);                 /* #131926 Layered Elevated Navy Card */
+  --card-foreground: oklch(0.96 0.01 240);
+  --popover: oklch(0.18 0.025 260);
+  --popover-foreground: oklch(0.96 0.01 240);
 
-  --primary: oklch(0.47 0.22 265);                /* #1b47d3 Royal / Cobalt Blue */
-  --primary-foreground: #ffffff;
-  --primary-soft: oklch(0.94 0.035 265);          /* #e0ebff Soft Ice / Lavender Blue */
+  /* Primary Accent: Restrained Cyan / Deep Sky Precision */
+  --primary: oklch(0.68 0.15 215);               /* #00a8d6 Precision Cyan-Teal */
+  --primary-foreground: oklch(0.10 0.02 260);    /* #050811 Dark Ink on Cyan */
+  --primary-soft: oklch(0.24 0.04 220);          /* #162a3d Subtle Cyan Tint Surface */
 
-  --navy: oklch(0.22 0.09 268);                   /* #091443 Midnight Deep Navy */
-  --navy-foreground: oklch(0.97 0.01 90);         /* #f8f5ee Warm off-white */
+  --navy: oklch(0.11 0.03 260);                  /* #060913 Deepest Night Navy */
+  --navy-foreground: oklch(0.96 0.01 240);
 
-  --border: oklch(0.917 0.007 85);                /* #e6e3de Warm muted grey */
-  --input: oklch(0.917 0.007 85);
-  --ring: oklch(0.47 0.22 265);
+  --border: oklch(0.26 0.025 260);               /* #222c40 Refined 1px Boundary */
+  --input: oklch(0.26 0.025 260);
+  --ring: oklch(0.68 0.15 215);
 
-  --secondary: oklch(0.945 0.008 90);             /* Subtle cream-grey layer */
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.935 0.008 85);
-  --muted-foreground: oklch(0.50 0.01 60);
+  --secondary: oklch(0.22 0.025 260);            /* #1a2233 Secondary Dark Surface */
+  --secondary-foreground: oklch(0.92 0.01 240);
+  --muted: oklch(0.20 0.02 260);                 /* #161d2d Subdued Slate */
+  --muted-foreground: oklch(0.65 0.02 250);      /* #8c9bb4 Understated Gray */
 
-  --accent: var(--primary-soft);                  /* Soft lavender blue accent */
-  --accent-foreground: var(--primary);
+  --accent: oklch(0.24 0.04 220);                /* Precision Tint */
+  --accent-foreground: oklch(0.85 0.10 215);
 
-  /* Legacy aliases mapped to new tokens */
+  /* Legacy Aliases */
   --porcelain: var(--background);
   --ink: var(--foreground);
   --electric: var(--primary);
   --electric-soft: var(--primary-soft);
 
-  /* 2. Functional & Status Colors */
-  --danger: oklch(0.58 0.18 25);                  /* #cf4040 Coral Red - Critical / Destructive */
+  /* 2. Professional Understated Status Colors */
+  --danger: oklch(0.62 0.20 25);                 /* #e04848 Crimson Alert */
   --destructive: var(--danger);
   --destructive-foreground: #ffffff;
 
-  --warn: oklch(0.76 0.14 72);                    /* #e7a13c Amber Gold */
-  --warn-ink: oklch(0.52 0.12 60);                /* #9a5505 Dark Amber Brown */
+  --warn: oklch(0.75 0.15 75);                   /* #e5a43b Amber Caution */
+  --warn-ink: oklch(0.95 0.08 75);               /* Accessible Light Amber Text */
 
-  --success: oklch(0.60 0.11 162);                /* #34946c Emerald Green */
-  --transit: oklch(0.60 0.15 245);                /* #0486d3 Cyan / Sky Blue */
-  --info: var(--transit);
+  --success: oklch(0.68 0.15 155);               /* #2ec486 Restrained Emerald */
+  --transit: oklch(0.70 0.14 235);               /* #38bdf8 Tactical Sky Blue */
+  --info: var(--primary);
 
   /* 3. Geographic / Map Palette */
-  --map-water: oklch(0.91 0.03 230);              /* #cee6f2 Soft Backwater Blue */
-  --map-land: oklch(0.985 0.006 90);              /* #fcfaf6 Pale Canvas */
-  --map-road: oklch(0.88 0.01 85);                /* #dad7d0 Muted Sand Grey */
+  --map-water: oklch(0.20 0.04 240);             /* #14223d Deep Water */
+  --map-land: oklch(0.14 0.02 260);              /* Dark Terrain */
+  --map-road: oklch(0.28 0.02 260);              /* Subdued Road Grid */
 
   /* Sidebar */
-  --sidebar: #ffffff;
+  --sidebar: oklch(0.16 0.025 260);              /* #101624 Dark Sidebar */
   --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: var(--primary-soft);
-  --sidebar-accent-foreground: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--secondary);
+  --sidebar-accent-foreground: var(--foreground);
   --sidebar-border: var(--border);
   --sidebar-ring: var(--primary);
 
   /* Charts */
-  --chart-1: var(--primary);                      /* Cobalt Blue */
-  --chart-2: var(--success);                      /* Emerald */
-  --chart-3: var(--warn);                         /* Amber Gold */
-  --chart-4: var(--danger);                       /* Coral Red */
-  --chart-5: var(--transit);                      /* Cyan / Sky Blue */
+  --chart-1: oklch(0.68 0.15 215);               /* Cyan */
+  --chart-2: oklch(0.68 0.15 155);               /* Emerald */
+  --chart-3: oklch(0.75 0.15 75);                /* Amber */
+  --chart-4: oklch(0.62 0.20 25);                /* Crimson */
+  --chart-5: oklch(0.70 0.14 235);               /* Sky */
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
-    transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
   html,
   body {
     background-color: var(--color-background);
     background-image: 
-      radial-gradient(ellipse at 50% 0%, color-mix(in oklab, var(--primary) 3.5%, transparent) 0%, transparent 60%),
-      radial-gradient(color-mix(in oklab, var(--foreground) 3.5%, transparent) 1px, transparent 1px);
-    background-size: 100% 100%, 24px 24px;
+      radial-gradient(120% 80% at 50% -20%, color-mix(in oklab, var(--primary) 8%, transparent) 0%, transparent 70%),
+      radial-gradient(color-mix(in oklab, var(--foreground) 3%, transparent) 1px, transparent 1px);
+    background-size: 100% 100%, 28px 28px;
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -183,63 +184,65 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: color-mix(in oklab, var(--foreground) 15%, transparent);
+    background: color-mix(in oklab, var(--foreground) 12%, transparent);
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: color-mix(in oklab, var(--foreground) 25%, transparent);
+    background: color-mix(in oklab, var(--foreground) 24%, transparent);
   }
 }
 
 @utility glass {
-  background: color-mix(in oklab, var(--card) 85%, transparent);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid color-mix(in oklab, var(--card) 40%, var(--border));
+  background: color-mix(in oklab, var(--card) 75%, transparent);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid color-mix(in oklab, var(--foreground) 8%, var(--border));
 }
 
 @utility soft-ring {
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--primary) 12%, transparent),
-    0 2px 4px color-mix(in oklab, var(--ink) 4%, transparent);
+    0 0 0 1px color-mix(in oklab, var(--primary) 25%, transparent),
+    0 2px 6px color-mix(in oklab, black 30%, transparent);
 }
 
 @utility soft-shadow {
   box-shadow:
-    0 1px 2px color-mix(in oklab, var(--ink) 3%, transparent),
-    0 6px 16px -4px color-mix(in oklab, var(--ink) 6%, transparent),
-    0 20px 40px -12px color-mix(in oklab, var(--primary) 7%, transparent);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    0 1px 1px color-mix(in oklab, black 30%, transparent),
+    0 4px 12px -2px color-mix(in oklab, black 40%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--foreground) 5%, transparent);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @utility soft-shadow:hover {
   box-shadow:
-    0 2px 4px color-mix(in oklab, var(--ink) 4%, transparent),
-    0 12px 28px -6px color-mix(in oklab, var(--ink) 8%, transparent),
-    0 24px 48px -12px color-mix(in oklab, var(--primary) 12%, transparent);
+    0 2px 4px color-mix(in oklab, black 40%, transparent),
+    0 10px 24px -4px color-mix(in oklab, black 60%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--primary) 25%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--foreground) 10%, transparent);
 }
 
 @utility electric-shadow {
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--primary) 20%, transparent),
-    0 8px 24px -6px color-mix(in oklab, var(--primary) 35%, transparent);
+    0 0 0 1px color-mix(in oklab, var(--primary) 35%, transparent),
+    0 8px 24px -6px color-mix(in oklab, var(--primary) 30%, transparent);
 }
 
 @utility navy-panel {
   background: radial-gradient(
     120% 120% at 100% 0%, 
-    color-mix(in oklab, var(--primary) 75%, var(--navy)) 0%, 
-    var(--navy) 65%
+    color-mix(in oklab, var(--primary) 20%, var(--card)) 0%, 
+    var(--navy) 80%
   );
   color: var(--navy-foreground);
   box-shadow: 
-    0 0 0 1px color-mix(in oklab, var(--primary) 25%, transparent),
-    0 16px 36px -8px color-mix(in oklab, var(--navy) 50%, transparent);
+    0 0 0 1px color-mix(in oklab, var(--primary) 20%, transparent),
+    0 16px 36px -8px color-mix(in oklab, black 60%, transparent),
+    inset 0 1px 0 0 color-mix(in oklab, var(--primary) 15%, transparent);
 }
 
 @utility dot-grid {
   background-image: radial-gradient(
-    color-mix(in oklab, var(--foreground) 7%, transparent) 1px, 
+    color-mix(in oklab, var(--foreground) 4.5%, transparent) 1px, 
     transparent 1px
   );
   background-size: 20px 20px;
