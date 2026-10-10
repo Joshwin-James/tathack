@@ -12,6 +12,29 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+// Global protection: prevent R3F from deep-piercing devtools JSX attributes
+if (typeof window !== "undefined") {
+  const devProps = ["data-tsd-source", "data-tsd", "data-source", "data-component", "data-lov-id", "data-state"];
+  for (const prop of devProps) {
+    if (!(prop in Object.prototype)) {
+      Object.defineProperty(Object.prototype, prop, {
+        value: undefined,
+        writable: true,
+        configurable: true,
+        enumerable: false,
+      });
+    }
+  }
+  if (!(Object.prototype as any).data) {
+    Object.defineProperty(Object.prototype, "data", {
+      value: { tsd: { source: "" } },
+      writable: true,
+      configurable: true,
+      enumerable: false,
+    });
+  }
+}
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">

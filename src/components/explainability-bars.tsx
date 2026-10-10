@@ -10,11 +10,12 @@ export function ExplainabilityBars({
   title?: string;
   className?: string;
 }) {
+  const list = Array.isArray(data) ? data : explainability;
   return (
     <div className={cn("space-y-4", className)}>
       <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">{title}</p>
       <div className="space-y-3">
-        {data.map((row, i) => (
+        {list.map((row, i) => (
           <div key={row.label} className="space-y-1.5">
             <div className="flex items-baseline justify-between text-xs">
               <span className="font-medium text-foreground">{row.label}</span>

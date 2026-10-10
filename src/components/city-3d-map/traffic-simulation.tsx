@@ -1,6 +1,6 @@
 import React, { useRef, useMemo, useReducer } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, Environment } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import * as THREE from 'three';
 import { TrafficEngine } from './engine';
@@ -13,9 +13,36 @@ import { Ambulance } from './ambulance';
 import { IncidentLayer } from './incident-layer';
 import type { Incident } from '@/data/kochi';
 
-// R3F compatibility patch for Vite devtools JSX data-tsd-source attribute injection
-if (typeof window !== 'undefined' && !(THREE.Object3D.prototype as any).data) {
-  (THREE.Object3D.prototype as any).data = {};
+// Prevent React Three Fiber from attempting to deep-pierce hyphenated Vite/Lovable devtool JSX attributes
+if (typeof window !== 'undefined') {
+  const devProps = [
+    'data-tsd-source',
+    'data-tsd',
+    'data-source',
+    'data-component',
+    'data-lov-id',
+    'data-state',
+  ];
+  for (const prop of devProps) {
+    if (!(prop in Object.prototype)) {
+      Object.defineProperty(Object.prototype, prop, {
+        value: undefined,
+        writable: true,
+        configurable: true,
+        enumerable: false,
+      });
+    }
+  }
+
+  // Also define 'data' fallback object on Object.prototype in case any nested data-* property is pierced
+  if (!(Object.prototype as any).data) {
+    Object.defineProperty(Object.prototype, 'data', {
+      value: { tsd: { source: '' } },
+      writable: true,
+      configurable: true,
+      enumerable: false,
+    });
+  }
 }
 
 interface SceneProps {
@@ -535,7 +562,7 @@ function SceneContent({
         orbitControlsRef={orbitControlsRef}
       />
 
-      <Environment preset="city" />
+      <hemisphereLight intensity={0.65} groundColor="#0f172a" color="#bae6fd" />
 
       {/* Kochi Road network & 3D Landmarks */}
       <RoadNetwork />
@@ -608,17 +635,19 @@ function TrafficSimulationComponent({
       dpr={[1, 1.5]}
     >
       <fog attach="fog" args={['#0f172a', 200, 650]} />
-      <SceneContent
-        engine={engine}
-        onSnapshot={onSnapshot}
-        followAmbulance={followAmbulance}
-        selectedVehicleId={selectedVehicleId}
-        cameraMode={cameraMode}
-        incidents={incidents}
-        selectedIncidentId={selectedIncidentId}
-        onSelectIncident={onSelectIncident}
-        orbitControlsRef={orbitControlsRef}
-      />
+      <React.Suspense fallback={null}>
+        <SceneContent
+          engine={engine}
+          onSnapshot={onSnapshot}
+          followAmbulance={followAmbulance}
+          selectedVehicleId={selectedVehicleId}
+          cameraMode={cameraMode}
+          incidents={incidents}
+          selectedIncidentId={selectedIncidentId}
+          onSelectIncident={onSelectIncident}
+          orbitControlsRef={orbitControlsRef}
+        />
+      </React.Suspense>
       <OrbitControls
         ref={orbitControlsRef}
         enablePan

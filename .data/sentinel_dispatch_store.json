@@ -454,5 +454,63 @@
         "reason": "Adaptive signal recalibration for Palarivattom Bridge. East approach currently has 57 vehicles queued. Recommend dynamic green split extension from 30s to 51s. Time-of-day condition: Normal Flow."
       }
     ]
+  },
+  {
+    "id": "ASN-2026-715",
+    "reference_code": "ASN-POL-715",
+    "title": "CCTV Alert: Sudden Congestion Surge",
+    "description": "Neural vision automated alert from camera node CAM-22 at MG Road North. Stalled vehicle or pedestrian hazard verified.",
+    "assignment_type": "cctv_verification",
+    "category": "police",
+    "priority": "high",
+    "status": "approved",
+    "incident_id": null,
+    "parent_assignment_id": null,
+    "location_name": "MG Road North",
+    "latitude": 9.9712,
+    "longitude": 76.2825,
+    "road_segment_id": null,
+    "department_id": "Traffic Operations",
+    "assigned_team_id": null,
+    "assigned_team_name": null,
+    "assigned_unit_id": null,
+    "assigned_unit_name": null,
+    "assigned_user_id": null,
+    "assigned_user_name": null,
+    "required_capability": null,
+    "created_by": "Kochi Central Dispatcher",
+    "created_at": "2026-10-10T02:59:52.638Z",
+    "updated_at": "2026-10-10T02:59:52.638Z",
+    "approved_by": "System Pre-Authorization",
+    "approved_at": "2026-10-10T02:59:52.638Z",
+    "started_at": null,
+    "acknowledged_at": null,
+    "due_at": null,
+    "target_response_sec": 600,
+    "completed_at": null,
+    "closed_at": null,
+    "completion_summary": null,
+    "completion_evidence": [],
+    "requires_approval": false,
+    "metadata": {},
+    "version": 1,
+    "source": "ai_recommendation",
+    "is_simulated": false,
+    "stale_location": false,
+    "comments": [],
+    "events": [
+      {
+        "id": "EVT-1791601192638",
+        "assignment_id": "ASN-2026-715",
+        "event_type": "created",
+        "from_status": null,
+        "to_status": "approved",
+        "actor_id": "user-operator",
+        "actor_name": "Kochi City Operator",
+        "actor_role": "city_operator",
+        "timestamp": "2026-10-10T02:59:52.638Z",
+        "reason": "Neural vision automated alert from camera node CAM-22 at MG Road North. Stalled vehicle or pedestrian hazard verified."
+      }
+    ]
   }
 ]
