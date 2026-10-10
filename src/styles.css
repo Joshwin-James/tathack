@@ -80,33 +80,33 @@
      Deep Navy & Charcoal · Restrained Teal/Cyan · Precision Layering
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-  /* 1. Core Surfaces & Typography */
-  --background: oklch(0.14 0.02 260);            /* #0b0f19 Deep Navy / Midnight Base */
-  --foreground: oklch(0.96 0.01 240);            /* #eef2f8 Crisp High-Contrast White */
-  --card: oklch(0.18 0.025 260);                 /* #131926 Layered Elevated Navy Card */
-  --card-foreground: oklch(0.96 0.01 240);
-  --popover: oklch(0.18 0.025 260);
-  --popover-foreground: oklch(0.96 0.01 240);
+  /* 1. Core Surfaces & High-Contrast Typography */
+  --background: oklch(0.142 0.022 260);          /* #0c101a Deep Charcoal / Midnight Base */
+  --foreground: oklch(0.965 0.008 240);          /* #edf2f8 High-Contrast Crisp White */
+  --card: oklch(0.178 0.024 260);               /* #131927 Layered Elevated Navy Card */
+  --card-foreground: oklch(0.965 0.008 240);
+  --popover: oklch(0.178 0.024 260);
+  --popover-foreground: oklch(0.965 0.008 240);
 
-  /* Primary Accent: Restrained Cyan / Deep Sky Precision */
-  --primary: oklch(0.68 0.15 215);               /* #00a8d6 Precision Cyan-Teal */
-  --primary-foreground: oklch(0.10 0.02 260);    /* #050811 Dark Ink on Cyan */
-  --primary-soft: oklch(0.24 0.04 220);          /* #162a3d Subtle Cyan Tint Surface */
+  /* Primary Accent: Restrained Tactical Cyan / Teal */
+  --primary: oklch(0.70 0.14 210);              /* #00b4d8 Precision Cyan-Teal */
+  --primary-foreground: oklch(0.11 0.025 260);  /* Dark Ink on Cyan */
+  --primary-soft: oklch(0.23 0.04 215);         /* #132a3d Subtle Cyan Tint Surface */
 
-  --navy: oklch(0.11 0.03 260);                  /* #060913 Deepest Night Navy */
-  --navy-foreground: oklch(0.96 0.01 240);
+  --navy: oklch(0.115 0.025 260);               /* #070a12 Deepest Night Navy */
+  --navy-foreground: oklch(0.965 0.008 240);
 
-  --border: oklch(0.26 0.025 260);               /* #222c40 Refined 1px Boundary */
-  --input: oklch(0.26 0.025 260);
-  --ring: oklch(0.68 0.15 215);
+  --border: oklch(0.255 0.022 260);             /* #1f293e Understated 1px Boundary */
+  --input: oklch(0.255 0.022 260);
+  --ring: oklch(0.70 0.14 210);
 
-  --secondary: oklch(0.22 0.025 260);            /* #1a2233 Secondary Dark Surface */
+  --secondary: oklch(0.215 0.026 260);          /* #172033 Secondary Layered Dark Surface */
   --secondary-foreground: oklch(0.92 0.01 240);
-  --muted: oklch(0.20 0.02 260);                 /* #161d2d Subdued Slate */
-  --muted-foreground: oklch(0.65 0.02 250);      /* #8c9bb4 Understated Gray */
+  --muted: oklch(0.195 0.022 260);              /* #151c2d Subdued Slate */
+  --muted-foreground: oklch(0.66 0.018 250);     /* #8899b0 Clean Understated Gray */
 
-  --accent: oklch(0.24 0.04 220);                /* Precision Tint */
-  --accent-foreground: oklch(0.85 0.10 215);
+  --accent: oklch(0.23 0.04 215);               /* Precision Surface Tint */
+  --accent-foreground: oklch(0.88 0.09 210);
 
   /* Legacy Aliases */
   --porcelain: var(--background);
@@ -115,24 +115,24 @@
   --electric-soft: var(--primary-soft);
 
   /* 2. Professional Understated Status Colors */
-  --danger: oklch(0.62 0.20 25);                 /* #e04848 Crimson Alert */
+  --danger: oklch(0.64 0.19 25);                /* #e64c4c Crimson Alert */
   --destructive: var(--danger);
   --destructive-foreground: #ffffff;
 
-  --warn: oklch(0.75 0.15 75);                   /* #e5a43b Amber Caution */
-  --warn-ink: oklch(0.95 0.08 75);               /* Accessible Light Amber Text */
+  --warn: oklch(0.76 0.15 75);                  /* #e5a639 Amber Caution */
+  --warn-ink: oklch(0.95 0.06 75);              /* Accessible Light Amber Text */
 
-  --success: oklch(0.68 0.15 155);               /* #2ec486 Restrained Emerald */
-  --transit: oklch(0.70 0.14 235);               /* #38bdf8 Tactical Sky Blue */
+  --success: oklch(0.70 0.15 155);              /* #2ac482 Restrained Emerald */
+  --transit: oklch(0.72 0.13 230);              /* #38bdf8 Tactical Sky Blue */
   --info: var(--primary);
 
   /* 3. Geographic / Map Palette */
-  --map-water: oklch(0.20 0.04 240);             /* #14223d Deep Water */
-  --map-land: oklch(0.14 0.02 260);              /* Dark Terrain */
-  --map-road: oklch(0.28 0.02 260);              /* Subdued Road Grid */
+  --map-water: oklch(0.20 0.04 240);            /* #14223d Deep Water */
+  --map-land: oklch(0.142 0.022 260);           /* Dark Terrain */
+  --map-road: oklch(0.28 0.02 260);             /* Subdued Road Grid */
 
   /* Sidebar */
-  --sidebar: oklch(0.16 0.025 260);              /* #101624 Dark Sidebar */
+  --sidebar: oklch(0.155 0.024 260);            /* #101522 Dark Command Sidebar */
   --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
   --sidebar-primary-foreground: var(--primary-foreground);
@@ -142,24 +142,24 @@
   --sidebar-ring: var(--primary);
 
   /* Charts */
-  --chart-1: oklch(0.68 0.15 215);               /* Cyan */
-  --chart-2: oklch(0.68 0.15 155);               /* Emerald */
-  --chart-3: oklch(0.75 0.15 75);                /* Amber */
-  --chart-4: oklch(0.62 0.20 25);                /* Crimson */
-  --chart-5: oklch(0.70 0.14 235);               /* Sky */
+  --chart-1: oklch(0.70 0.14 210);              /* Cyan */
+  --chart-2: oklch(0.70 0.15 155);              /* Emerald */
+  --chart-3: oklch(0.76 0.15 75);               /* Amber */
+  --chart-4: oklch(0.64 0.19 25);               /* Crimson */
+  --chart-5: oklch(0.72 0.13 230);              /* Sky */
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
-    transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: border-color 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   }
   html,
   body {
     background-color: var(--color-background);
     background-image: 
-      radial-gradient(120% 80% at 50% -20%, color-mix(in oklab, var(--primary) 8%, transparent) 0%, transparent 70%),
-      radial-gradient(color-mix(in oklab, var(--foreground) 3%, transparent) 1px, transparent 1px);
+      radial-gradient(100% 70% at 50% -10%, color-mix(in oklab, var(--primary) 6%, transparent) 0%, transparent 65%),
+      radial-gradient(color-mix(in oklab, var(--foreground) 3.5%, transparent) 1px, transparent 1px);
     background-size: 100% 100%, 28px 28px;
     background-attachment: fixed;
     color: var(--color-foreground);
@@ -175,6 +175,11 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
+  /* Interactive element micro-press feedback */
+  button:active,
+  [role="button"]:active {
+    transform: scale(0.988);
+  }
   /* Sleek custom scrollbars */
   ::-webkit-scrollbar {
     width: 6px;
@@ -184,7 +189,7 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: color-mix(in oklab, var(--foreground) 12%, transparent);
+    background: color-mix(in oklab, var(--foreground) 14%, transparent);
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -193,10 +198,10 @@
 }
 
 @utility glass {
-  background: color-mix(in oklab, var(--card) 75%, transparent);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid color-mix(in oklab, var(--foreground) 8%, var(--border));
+  background: color-mix(in oklab, var(--card) 78%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--foreground) 7%, var(--border));
 }
 
 @utility soft-ring {
@@ -207,42 +212,43 @@
 
 @utility soft-shadow {
   box-shadow:
-    0 1px 1px color-mix(in oklab, black 30%, transparent),
-    0 4px 12px -2px color-mix(in oklab, black 40%, transparent),
+    0 1px 2px color-mix(in oklab, black 35%, transparent),
+    0 6px 16px -3px color-mix(in oklab, black 45%, transparent),
     inset 0 1px 0 0 color-mix(in oklab, var(--foreground) 5%, transparent);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 
-@utility soft-shadow:hover {
-  box-shadow:
-    0 2px 4px color-mix(in oklab, black 40%, transparent),
-    0 10px 24px -4px color-mix(in oklab, black 60%, transparent),
-    0 0 0 1px color-mix(in oklab, var(--primary) 25%, transparent),
-    inset 0 1px 0 0 color-mix(in oklab, var(--foreground) 10%, transparent);
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      0 2px 4px color-mix(in oklab, black 40%, transparent),
+      0 10px 24px -4px color-mix(in oklab, black 60%, transparent),
+      0 0 0 1px color-mix(in oklab, var(--primary) 20%, transparent),
+      inset 0 1px 0 0 color-mix(in oklab, var(--foreground) 8%, transparent);
+  }
 }
 
 @utility electric-shadow {
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--primary) 35%, transparent),
-    0 8px 24px -6px color-mix(in oklab, var(--primary) 30%, transparent);
+    0 0 0 1px color-mix(in oklab, var(--primary) 30%, transparent),
+    0 8px 24px -6px color-mix(in oklab, var(--primary) 25%, transparent);
 }
 
 @utility navy-panel {
   background: radial-gradient(
     120% 120% at 100% 0%, 
-    color-mix(in oklab, var(--primary) 20%, var(--card)) 0%, 
-    var(--navy) 80%
+    color-mix(in oklab, var(--primary) 18%, var(--card)) 0%, 
+    var(--navy) 85%
   );
   color: var(--navy-foreground);
   box-shadow: 
-    0 0 0 1px color-mix(in oklab, var(--primary) 20%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--primary) 18%, transparent),
     0 16px 36px -8px color-mix(in oklab, black 60%, transparent),
-    inset 0 1px 0 0 color-mix(in oklab, var(--primary) 15%, transparent);
+    inset 0 1px 0 0 color-mix(in oklab, var(--primary) 14%, transparent);
 }
 
 @utility dot-grid {
   background-image: radial-gradient(
-    color-mix(in oklab, var(--foreground) 4.5%, transparent) 1px, 
+    color-mix(in oklab, var(--foreground) 4%, transparent) 1px, 
     transparent 1px
   );
   background-size: 20px 20px;
