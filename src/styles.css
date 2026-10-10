@@ -67,71 +67,71 @@
   --radius: 0.75rem;
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     PROJECT SENTINEL — PREMIUM MONOCHROME PALETTE
-     Pure black typography · White card surfaces · Gray scale
+     PROJECT SENTINEL — SLEEK PURPLE / VIOLET THEME
+     Deep royal purple accents · Clean crisp cards · Modern cyber-tactical violet
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-  /* Core monochrome tokens */
-  --porcelain: #f7f7f7;           /* Light gray page background */
-  --ink: #0a0a0a;                 /* Near-pure black for text */
+  /* Core purple tokens */
+  --porcelain: #faf8ff;           /* Subtle soft violet/white canvas */
+  --ink: #0f0a1c;                 /* Deep midnight violet for dark text */
 
-  /* Primary accent stays black for B&W feel */
-  --electric: #111111;            /* Black primary button/accent */
-  --electric-soft: #f0f0f0;      /* Light gray soft surface */
+  /* Primary Accent: Electric Violet / Royal Purple */
+  --electric: #7c3aed;            /* Vibrant Purple (violet-600) */
+  --electric-soft: #f3e8ff;       /* Light purple soft glow / highlight (purple-100) */
 
-  /* Semantic status — keep functional colors minimal & desaturated */
-  --success: oklch(0.50 0.14 152);  /* Muted emerald */
-  --warn:    oklch(0.58 0.13 70);   /* Muted amber */
-  --danger:  oklch(0.52 0.18 25);   /* Muted red */
-  --info:    oklch(0.50 0.11 250);  /* Muted blue */
+  /* Semantic status colors */
+  --success: oklch(0.60 0.15 152);  /* Emerald Green */
+  --warn:    oklch(0.68 0.16 70);   /* Warm Amber */
+  --danger:  oklch(0.58 0.20 25);   /* Crimson Red */
+  --info:    #8b5cf6;               /* Light Violet */
 
   /* Surface system */
-  --background:            #f5f5f5;
-  --foreground:            #0a0a0a;
+  --background:            #f8f6fc;
+  --foreground:            #120c24;
   --card:                  #ffffff;
-  --card-foreground:       #0a0a0a;
+  --card-foreground:       #120c24;
   --popover:               #ffffff;
-  --popover-foreground:    #0a0a0a;
+  --popover-foreground:    #120c24;
 
-  /* Actions */
-  --primary:               #111111;
+  /* Actions & Primary Buttons */
+  --primary:               #7c3aed;
   --primary-foreground:    #ffffff;
 
   /* Secondary surfaces */
-  --secondary:             #f0f0f0;
-  --secondary-foreground:  #111111;
-  --muted:                 #ebebeb;
-  --muted-foreground:      #6b6b6b;
+  --secondary:             #f3eefc;
+  --secondary-foreground:  #4c1d95;
+  --muted:                 #ede7f6;
+  --muted-foreground:      #6b5e82;
 
-  /* Accent (previously orange, now neutral) */
-  --accent:                #e8e8e8;
-  --accent-foreground:     #111111;
+  /* Accent highlights */
+  --accent:                #ede9fe;
+  --accent-foreground:     #6d28d9;
 
-  /* Destructive stays red for safety */
+  /* Destructive */
   --destructive:           var(--danger);
   --destructive-foreground: #ffffff;
 
   /* Borders & inputs */
-  --border:   #e2e2e2;
-  --input:    #e2e2e2;
-  --ring:     #111111;
+  --border:   #e5def0;
+  --input:    #e5def0;
+  --ring:     #7c3aed;
 
-  /* Charts — grayscale stepped palette */
-  --chart-1: #111111;
-  --chart-2: #444444;
-  --chart-3: #777777;
-  --chart-4: #aaaaaa;
-  --chart-5: #cccccc;
+  /* Charts — purple gradient palette */
+  --chart-1: #7c3aed;
+  --chart-2: #a855f7;
+  --chart-3: #c084fc;
+  --chart-4: #6366f1;
+  --chart-5: #38bdf8;
 
-  /* Sidebar mirrors card */
+  /* Sidebar */
   --sidebar:                    #ffffff;
-  --sidebar-foreground:         #0a0a0a;
-  --sidebar-primary:            #111111;
+  --sidebar-foreground:         #120c24;
+  --sidebar-primary:            #7c3aed;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent:             #f0f0f0;
-  --sidebar-accent-foreground:  #111111;
-  --sidebar-border:             #e2e2e2;
-  --sidebar-ring:               #111111;
+  --sidebar-accent:             #f3eefc;
+  --sidebar-accent-foreground:  #6d28d9;
+  --sidebar-border:             #e5def0;
+  --sidebar-ring:               #7c3aed;
 }
 
 @layer base {
@@ -175,7 +175,7 @@
 
 @utility electric-shadow {
   box-shadow:
-    0 8px 24px -8px color-mix(in oklab, var(--electric) 20%, transparent);
+    0 8px 24px -8px color-mix(in oklab, var(--electric) 35%, transparent);
 }
 
 @keyframes pulse-soft {
