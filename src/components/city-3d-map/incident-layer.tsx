@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import type { Incident } from '@/data/kochi';
 
@@ -50,6 +49,60 @@ function PulseRing({ color, active }: { color: string; active: boolean }) {
         depthWrite={false}
       />
     </mesh>
+  );
+}
+
+function IncidentBadgeSprite({
+  title,
+  location,
+  color,
+  selected,
+}: {
+  title: string;
+  location: string;
+  color: string;
+  selected: boolean;
+}) {
+  const texture = useMemo(() => {
+    if (typeof document === 'undefined') return null;
+    const canvas = document.createElement('canvas');
+    canvas.width = 300;
+    canvas.height = 96;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return null;
+
+    // Background rounded pill
+    ctx.fillStyle = selected ? 'rgba(15, 23, 42, 0.96)' : 'rgba(15, 23, 42, 0.88)';
+    ctx.strokeStyle = color;
+    ctx.lineWidth = selected ? 4 : 2.5;
+    ctx.beginPath();
+    ctx.roundRect(4, 4, 292, 88, 14);
+    ctx.fill();
+    ctx.stroke();
+
+    // Title
+    ctx.fillStyle = color;
+    ctx.font = 'bold 22px system-ui, -apple-system, sans-serif';
+    const displayTitle = title.length > 20 ? title.slice(0, 18) + '...' : title;
+    ctx.fillText(displayTitle, 16, 38);
+
+    // Location
+    ctx.fillStyle = '#cbd5e1';
+    ctx.font = '16px system-ui, -apple-system, sans-serif';
+    const displayLoc = location.length > 26 ? location.slice(0, 24) + '...' : location;
+    ctx.fillText(displayLoc, 16, 72);
+
+    const tex = new THREE.CanvasTexture(canvas);
+    tex.needsUpdate = true;
+    return tex;
+  }, [title, location, color, selected]);
+
+  if (!texture) return null;
+
+  return (
+    <sprite position={[1.8, 1.4, 0]} scale={[6.2, 2.0, 1]}>
+      <spriteMaterial map={texture} depthTest={false} transparent />
+    </sprite>
   );
 }
 
@@ -107,25 +160,13 @@ function IncidentPin({
         {/* Glow point light */}
         <pointLight color={color} intensity={selected ? 10 : 4} distance={12} decay={2} position={[0, 0, 0]} />
 
-        {/* HTML Tag */}
-        <Html position={[0.7, 0.4, 0]} style={{ pointerEvents: 'none', whiteSpace: 'nowrap' }}>
-          <div
-            style={{
-              background: 'rgba(11, 17, 32, 0.88)',
-              color: '#fff',
-              fontSize: '10px',
-              padding: '3px 7px',
-              borderRadius: '6px',
-              border: `1px solid ${color}`,
-              lineHeight: 1.3,
-              boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
-              backdropFilter: 'blur(4px)',
-            }}
-          >
-            <div style={{ color, fontWeight: 700 }}>{incident.title}</div>
-            <div style={{ color: '#94a3b8', fontSize: '9px' }}>{incident.location}</div>
-          </div>
-        </Html>
+        {/* 3D WebGL Canvas Sprite Badge */}
+        <IncidentBadgeSprite
+          title={incident.title}
+          location={incident.location}
+          color={color}
+          selected={selected}
+        />
       </group>
 
       {/* Ground marker */}

@@ -172,7 +172,7 @@ function Bridge() {
 function RoadSegment({ axis, x, z, length }: { axis: 'ns' | 'ew'; x: number; z: number; length: number }) {
   if (axis === 'ns') {
     return (
-      <mesh position={[x, 0.01, z]} receiveShadow material={_roadMat}>
+      <mesh position={[x, 0.01, z]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow material={_roadMat}>
         <planeGeometry args={[ROAD_WIDTH, length]} />
       </mesh>
     );

@@ -624,7 +624,7 @@ function TrafficSimulationComponent({
 
   return (
     <Canvas
-      shadows
+      shadows={{ type: THREE.PCFShadowMap }}
       camera={{ position: [100, 80, 100], fov: 50, near: 0.5, far: 1200 }}
       gl={{
         antialias: true,
@@ -634,6 +634,7 @@ function TrafficSimulationComponent({
       }}
       dpr={[1, 1.5]}
     >
+      <color attach="background" args={['#0a0f1d']} />
       <fog attach="fog" args={['#0f172a', 200, 650]} />
       <React.Suspense fallback={null}>
         <SceneContent

@@ -68,6 +68,42 @@ const PRESET_LABELS: Record<ScenarioPreset, { name: string; desc: string }> = {
   custom: { name: 'Custom Configuration', desc: 'Manual demand, fleet mix, and signal timing parameters.' },
 };
 
+class CanvasErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean; error: Error | null }
+> {
+  constructor(props: any) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(error: Error, info: any) {
+    console.error('3D Viewport caught error:', error, info);
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 p-6 text-center text-slate-300 z-10">
+          <AlertTriangle className="size-8 text-amber-400 mb-2 animate-bounce" />
+          <h3 className="font-semibold text-white text-sm">3D Scene Recovering</h3>
+          <p className="text-xs text-slate-400 max-w-sm mt-1">
+            {this.state.error?.message || 'Re-initializing WebGL canvas...'}
+          </p>
+          <button
+            onClick={() => this.setState({ hasError: false, error: null })}
+            className="mt-4 rounded-full bg-primary px-4 py-1.5 text-xs font-semibold text-primary-foreground hover:brightness-110 cursor-pointer"
+          >
+            Reload Scene
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export function City3DMap({
   height = 620,
   className,
@@ -84,7 +120,7 @@ export function City3DMap({
   }
   const engine = engineRef.current;
 
-  const [snapshot, setSnapshot] = useState<SnapshotData | null>(null);
+  const [snapshot, setSnapshot] = useState<SnapshotData | null>(() => (engineRef.current ? engineRef.current.getSnapshot() : null));
   const [cameraMode, setCameraMode] = useState<CameraMode>('orbit');
   const [followAmbulance, setFollowAmbulance] = useState(false);
   const [internalSelectedId, setInternalSelectedId] = useState<string | null>(null);
@@ -237,15 +273,17 @@ export function City3DMap({
     >
       {/* 3D Canvas */}
       <div className="absolute inset-0 z-0">
-        <TrafficSimulation
-          engine={engine}
-          onSnapshot={handleSnapshot}
-          followAmbulance={followAmbulance}
-          cameraMode={cameraMode}
-          incidents={incidents}
-          selectedIncidentId={selectedIncidentId}
-          onSelectIncident={handleSelectIncident}
-        />
+        <CanvasErrorBoundary>
+          <TrafficSimulation
+            engine={engine}
+            onSnapshot={handleSnapshot}
+            followAmbulance={followAmbulance}
+            cameraMode={cameraMode}
+            incidents={incidents}
+            selectedIncidentId={selectedIncidentId}
+            onSelectIncident={handleSelectIncident}
+          />
+        </CanvasErrorBoundary>
       </div>
 
       {/* Top Floating Controls Bar */}
