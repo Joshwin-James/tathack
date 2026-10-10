@@ -297,7 +297,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       {/* Global Operator Voice Command Modal */}
       {voiceModalOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-md flex items-center justify-center p-4 animate-rise">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 animate-rise">
           <div className="w-full max-w-2xl relative">
             <VoiceCommandBar variant="modal" onClose={() => setVoiceModalOpen(false)} />
           </div>

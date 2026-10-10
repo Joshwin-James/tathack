@@ -66,55 +66,72 @@
 :root {
   --radius: 0.75rem;
 
-  /* Requested Color Palette Tokens */
-  /* Canvas / Background: Warm Off-White / Sandstone Cream */
-  --porcelain: oklch(0.966 0.006 85); /* #f9f8f6 */
-  /* Ink / Obsidian: Deep Charcoal Black */
-  --ink: oklch(0.205 0 0); /* #18181b */
-  /* Primary (Accent): Warm Terracotta / Electric Orange */
-  --electric: oklch(0.68 0.19 40); /* #ea580c */
-  --electric-soft: oklch(0.96 0.04 40); /* #ffedd5 soft glow / highlight */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PROJECT SENTINEL — PREMIUM MONOCHROME PALETTE
+     Pure black typography · White card surfaces · Gray scale
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-  /* Semantic Status Colors */
-  --success: oklch(0.6 0.15 152); /* #10b981 Emerald Green - READY ✓ */
-  --warn: oklch(0.72 0.16 70); /* #f59e0b Amber / Warm Gold - WAITING ⏳ */
-  --danger: oklch(0.6 0.21 25); /* #ef4444 Crimson Red - CORRECTION REQ ⚠️ */
-  --info: oklch(0.58 0.14 250); /* #3b82f6 Ocean Blue - CORRECTION SUBMITTED 📩 */
+  /* Core monochrome tokens */
+  --porcelain: #f7f7f7;           /* Light gray page background */
+  --ink: #0a0a0a;                 /* Near-pure black for text */
 
-  --background: var(--porcelain);
-  --foreground: var(--ink);
-  --card: #ffffff;
-  --card-foreground: var(--ink);
-  --popover: #ffffff;
-  --popover-foreground: var(--ink);
-  --primary: var(--electric);
-  --primary-foreground: #ffffff;
-  --secondary: oklch(0.948 0.005 85);
-  --secondary-foreground: var(--ink);
-  --muted: oklch(0.94 0.005 85);
-  --muted-foreground: oklch(0.48 0.01 60);
-  --accent: var(--electric-soft);
-  --accent-foreground: var(--electric);
-  --destructive: var(--danger);
+  /* Primary accent stays black for B&W feel */
+  --electric: #111111;            /* Black primary button/accent */
+  --electric-soft: #f0f0f0;      /* Light gray soft surface */
+
+  /* Semantic status — keep functional colors minimal & desaturated */
+  --success: oklch(0.50 0.14 152);  /* Muted emerald */
+  --warn:    oklch(0.58 0.13 70);   /* Muted amber */
+  --danger:  oklch(0.52 0.18 25);   /* Muted red */
+  --info:    oklch(0.50 0.11 250);  /* Muted blue */
+
+  /* Surface system */
+  --background:            #f5f5f5;
+  --foreground:            #0a0a0a;
+  --card:                  #ffffff;
+  --card-foreground:       #0a0a0a;
+  --popover:               #ffffff;
+  --popover-foreground:    #0a0a0a;
+
+  /* Actions */
+  --primary:               #111111;
+  --primary-foreground:    #ffffff;
+
+  /* Secondary surfaces */
+  --secondary:             #f0f0f0;
+  --secondary-foreground:  #111111;
+  --muted:                 #ebebeb;
+  --muted-foreground:      #6b6b6b;
+
+  /* Accent (previously orange, now neutral) */
+  --accent:                #e8e8e8;
+  --accent-foreground:     #111111;
+
+  /* Destructive stays red for safety */
+  --destructive:           var(--danger);
   --destructive-foreground: #ffffff;
-  --border: oklch(0.91 0.006 85);
-  --input: oklch(0.91 0.006 85);
-  --ring: var(--electric);
 
-  --chart-1: var(--electric);
-  --chart-2: var(--success);
-  --chart-3: var(--warn);
-  --chart-4: var(--danger);
-  --chart-5: var(--info);
+  /* Borders & inputs */
+  --border:   #e2e2e2;
+  --input:    #e2e2e2;
+  --ring:     #111111;
 
-  --sidebar: #ffffff;
-  --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--electric);
+  /* Charts — grayscale stepped palette */
+  --chart-1: #111111;
+  --chart-2: #444444;
+  --chart-3: #777777;
+  --chart-4: #aaaaaa;
+  --chart-5: #cccccc;
+
+  /* Sidebar mirrors card */
+  --sidebar:                    #ffffff;
+  --sidebar-foreground:         #0a0a0a;
+  --sidebar-primary:            #111111;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: var(--electric-soft);
-  --sidebar-accent-foreground: var(--electric);
-  --sidebar-border: oklch(0.91 0.006 85);
-  --sidebar-ring: var(--electric);
+  --sidebar-accent:             #f0f0f0;
+  --sidebar-accent-foreground:  #111111;
+  --sidebar-border:             #e2e2e2;
+  --sidebar-ring:               #111111;
 }
 
 @layer base {
@@ -158,7 +175,7 @@
 
 @utility electric-shadow {
   box-shadow:
-    0 8px 24px -8px color-mix(in oklab, var(--electric) 40%, transparent);
+    0 8px 24px -8px color-mix(in oklab, var(--electric) 20%, transparent);
 }
 
 @keyframes pulse-soft {

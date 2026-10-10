@@ -686,5 +686,63 @@
         "reason": "Neural vision automated alert from camera node CAM-14 at Vytilla Hub. Stalled vehicle or pedestrian hazard verified."
       }
     ]
+  },
+  {
+    "id": "ASN-2026-458",
+    "reference_code": "ASN-TRA-458",
+    "title": "CCTV Alert: Stalled CAR Detected",
+    "description": "Neural vision automated alert from camera node CAM-14 at Vytilla Hub. Stalled vehicle or pedestrian hazard verified.",
+    "assignment_type": "stalled_vehicle_review",
+    "category": "traffic",
+    "priority": "critical",
+    "status": "approved",
+    "incident_id": null,
+    "parent_assignment_id": null,
+    "location_name": "Vytilla Hub",
+    "latitude": 9.9678,
+    "longitude": 76.3216,
+    "road_segment_id": null,
+    "department_id": "Traffic Police",
+    "assigned_team_id": null,
+    "assigned_team_name": null,
+    "assigned_unit_id": null,
+    "assigned_unit_name": null,
+    "assigned_user_id": null,
+    "assigned_user_name": null,
+    "required_capability": null,
+    "created_by": "Kochi Central Dispatcher",
+    "created_at": "2026-10-10T03:37:21.080Z",
+    "updated_at": "2026-10-10T03:37:21.080Z",
+    "approved_by": "System Pre-Authorization",
+    "approved_at": "2026-10-10T03:37:21.080Z",
+    "started_at": null,
+    "acknowledged_at": null,
+    "due_at": null,
+    "target_response_sec": 600,
+    "completed_at": null,
+    "closed_at": null,
+    "completion_summary": null,
+    "completion_evidence": [],
+    "requires_approval": false,
+    "metadata": {},
+    "version": 1,
+    "source": "ai_recommendation",
+    "is_simulated": false,
+    "stale_location": false,
+    "comments": [],
+    "events": [
+      {
+        "id": "EVT-1791603441080",
+        "assignment_id": "ASN-2026-458",
+        "event_type": "created",
+        "from_status": null,
+        "to_status": "approved",
+        "actor_id": "user-operator",
+        "actor_name": "Kochi City Operator",
+        "actor_role": "city_operator",
+        "timestamp": "2026-10-10T03:37:21.080Z",
+        "reason": "Neural vision automated alert from camera node CAM-14 at Vytilla Hub. Stalled vehicle or pedestrian hazard verified."
+      }
+    ]
   }
 ]
